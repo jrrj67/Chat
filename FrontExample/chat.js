@@ -1,4 +1,6 @@
-var connection = new signalR.HubConnectionBuilder().withUrl("https://localhost/chat").build();
+var connection = new signalR.HubConnectionBuilder().withUrl("https://localhost/chat", {
+    accessTokenFactory: () => "JWT here"
+}).build();
 
 //Disable the send button until connection is established.
 document.getElementById("sendButton").disabled = true;
